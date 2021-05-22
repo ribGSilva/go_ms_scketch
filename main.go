@@ -10,9 +10,8 @@ import (
 func main() {
 	router := gin.New()
 
-	router.Use(config.NewRestLogger())
+	config.ConfigRouter(router)
 	endpoint.InjectPingEndpoints(router)
-	endpoint.InjectHelloEndpoit(router)
 
-	router.Run(":8080")
+	router.Run()
 }
