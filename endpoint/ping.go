@@ -15,7 +15,7 @@ func InjectPingEndpoints(router *gin.Engine) {
 func getPing(ctx *gin.Context) {
 	service := service.GetPingService()
 	response := service.GetPing()
-	go config.LogResponse(
+	config.LogResponse(
 		ctx.GetHeader(constant.REQUEST_TRACE_ID),
 		ctx.Request.Method,
 		ctx.Request.URL.Path,

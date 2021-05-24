@@ -11,6 +11,7 @@ func main() {
 	router := gin.New()
 
 	config.ConfigRouter(router)
+	config.ConfigLogger(router)
 	endpoint.InjectPingEndpoints(router)
 
 	router.Run()
