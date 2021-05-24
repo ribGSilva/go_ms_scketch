@@ -17,5 +17,5 @@ func GetPingService() PingService {
 }
 
 func (svc *pingService) GetPing() object.ResponseTemplate {
-	return object.NewResponseTemplate(http.StatusOK, []byte("{ 'message': 'pong' }"))
+	return object.NewResponseTemplate(http.StatusOK, &object.PingResponse{Message: "pong"})
 }
